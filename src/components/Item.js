@@ -1,7 +1,15 @@
 import { formatPercent, formatStringAmount } from "../helpers";
 
+import { useDispatch } from "react-redux";
+import { actDeleteIncomeById } from "../store/actions";
+
 function Item({ data, total }) {
+  const dispatch = useDispatch();
   const { id, description, amount } = data;
+
+  const handleDelete = () => {
+    dispatch(actDeleteIncomeById(id));
+  };
   return (
     <div className="item clearfix">
       <div className="item__description">{description}</div>
@@ -11,7 +19,7 @@ function Item({ data, total }) {
           <div className="item__percentage">{formatPercent(amount, total)}</div>
         )}
         <div className="item__delete">
-          <button className="item__delete--btn">
+          <button className="item__delete--btn" onClick={handleDelete}>
             <i className="ion-ios-close-outline" />
           </button>
         </div>

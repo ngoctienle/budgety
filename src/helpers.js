@@ -24,6 +24,10 @@ export function calAmount(listData) {
 }
 
 export function formatPercent(amount, total) {
+  if (!total) {
+    return "0%";
+  }
+
   let percent = Math.round((amount / total) * 100);
   if (percent < 0) {
     percent = percent * -1;

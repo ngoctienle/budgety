@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { ACT_DELETE_INCOME } from "./actions";
 
 const initState = {
   listDataIncome: [
@@ -31,7 +32,20 @@ const initState = {
 };
 
 function reducer(state = initState, action) {
-  return state;
+  switch (action.type) {
+    case ACT_DELETE_INCOME:
+      const idDeleted = action.payload.id;
+      const dataIncomeAfterDelete = state.listDataIncome.filter((dataItem) => {
+        return dataItem.id !== idDeleted;
+      });
+      console.log("dataIncomeAfterDelete", dataIncomeAfterDelete);
+      return {
+        ...state,
+        listDataIncome: dataIncomeAfterDelete,
+      };
+    default:
+      return state;
+  }
 }
 
 export default reducer;
