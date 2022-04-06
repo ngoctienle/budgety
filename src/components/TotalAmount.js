@@ -1,5 +1,7 @@
-function TotalAmount() {
-  return <div className="budget__value">+ 2,345.64</div>;
+import { formatStringAmount } from "../helpers";
+
+function TotalAmount({ amount }) {
+  return <div className="budget__value">{formatStringAmount(amount)}</div>;
 }
 
 export default TotalAmount;
