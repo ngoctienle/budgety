@@ -28,9 +28,7 @@ function BudgetForm() {
     <div className="add">
       <div className="add__container">
         <select className="add__type">
-          <option value="inc" selected>
-            +
-          </option>
+          <option value="inc">+</option>
           <option value="exp">-</option>
         </select>
         <input

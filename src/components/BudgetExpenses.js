@@ -1,12 +1,13 @@
 import Item from "./Item";
 
-function BudgetExpenses() {
+function BudgetExpenses({ listData, total }) {
   return (
     <div className="expenses">
       <h2 className="expenses__title">Expenses</h2>
       <div className="expenses__list">
-        <Item />
-        <Item />
+        {listData.map((dataItem) => (
+          <Item data={dataItem} total={total} key={dataItem.id} />
+        ))}
       </div>
     </div>
   );
