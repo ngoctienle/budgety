@@ -6,7 +6,7 @@ function BudgetIncomes({ listData }) {
       <h2 className="icome__title">Income</h2>
       <div className="income__list">
         {listData.map((dataItem) => (
-          <Item data={dataItem} key={dataItem.id} />
+          <Item data={dataItem} />
         ))}
       </div>
     </div>

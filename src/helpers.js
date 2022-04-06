@@ -34,3 +34,24 @@ export function formatPercent(amount, total) {
   }
   return percent + "%";
 }
+
+export function defiMonth() {
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const d = new Date();
+  let nameMonth = month[d.getMonth()];
+  return nameMonth;
+}
